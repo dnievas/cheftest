@@ -10,7 +10,6 @@
 ["ttyS0", "ttyS1"].each do |dev|
 	template "/etc/init/#{dev}.conf" do
 		source "serial-template.erb"
-		action :create_if_missing
 		variables({
 			:serial_device => "#{dev}"
 		})

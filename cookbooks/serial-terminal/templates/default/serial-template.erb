@@ -1,6 +1,6 @@
-# <%= serial_device %> - getty
+# <%= @serial_device %> - getty
 #
-# This service maintains a getty on <%= serial_device %> from the point the system is
+# This service maintains a getty on <%= @serial_device %> from the point the system is
 # started until it is shut down again.
 
 start on stopped rc RUNLEVEL=[2345] and (
@@ -11,4 +11,4 @@ start on stopped rc RUNLEVEL=[2345] and (
 stop on runlevel [!2345]
 
 respawn
-exec /sbin/getty -L <%= serial_device %> 115200 vt102
+exec /sbin/getty -L <%= @serial_device %> 115200 vt102
